@@ -1,0 +1,43 @@
+{
+	"skills": [
+		{
+			"name": "mental",
+			"skills": [
+				"academics",
+				"computer",
+				"crafts",
+				"investigation",
+				"medicine",
+				"occult",
+				"politics",
+				"science"
+			]
+		},
+		{
+			"name": "physical",
+			"skills": [
+				"athletics",
+				"brawl",
+				"drive",
+				"firearms",
+				"larceny",
+				"stealth",
+				"survival",
+				"weaponry"
+			]
+		},
+		{
+			"name": "social",
+			"skills": [
+				"animal ken",
+				"empathy",
+				"expression",
+				"intimidation",
+				"persuasion",
+				"socialize",
+				"streetwise",
+				"subterfuge"
+			]
+		}
+	]
+}

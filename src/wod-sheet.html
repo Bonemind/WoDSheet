@@ -1,0 +1,101 @@
+<template>
+<!-- Character data -->
+<section>
+	<div class="row">
+		<h2>${heading}</h2>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-3" for="inputName">Name</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.name" type="text" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-3" for="inputAge">Age</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.age" type="text" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-3" for="inputPlayer">Player</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.player" type="text" class="form-control">
+					</div>
+				</div>
+
+			</form>
+		</div>
+
+		<div class="col-sm-4">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-3" for="inputConcept">Concept</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.concept" type="text" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-3" for="inputVirtue">Virtue</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.virtue" type="text" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-3" for="inputVice">Vice</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.vice" type="text" class="form-control">
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="col-sm-4">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-3" for="inputChronicle">Chronicle</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.chronicle" type="text" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-3" for="inputFaction">Faction</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.faction" type="text" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-3" for="inputGroupname">Group Name</label>
+					<div class="col-sm-9">
+						<input value.bind="sheet.character.group_name" type="text" class="form-control">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+<!-- Skills -->
+<section>
+	<div class="row">
+		<div class="row" repeat.for="skillgroup of dataStore.skills.skills">
+			<h4>${skillgroup.name}</h4>
+			<div class="row" repeat.for="skill of skillgroup.skills">
+				<input type="text" value.bind="$parent.$parent.sheet.skills[skillgroup.name][skill]['specialties']">
+				<input type="text" value.bind="$parent.$parent.sheet.skills[skillgroup.name][skill]['score']">
+				${skill}
+			</div>
+		</div>
+	</div>
+</section>
+<button class="btn btn-primary" click.trigger="debugSheet()">Debug</button>
+</template>
+
+
